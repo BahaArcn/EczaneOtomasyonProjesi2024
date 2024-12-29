@@ -53,6 +53,8 @@ namespace EczaneOtomasyon2024
 
         private void Form4_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'eczaneOtomasyonuDBDataSet.Ilaclar' table. You can move, or remove it, as needed.
+            this.ilaclarTableAdapter.Fill(this.eczaneOtomasyonuDBDataSet.Ilaclar);
             // TODO: This line of code loads data into the 'eczaneOtomasyonuDBDataSet.Hastalar' table. You can move, or remove it, as needed.
             this.hastalarTableAdapter.Fill(this.eczaneOtomasyonuDBDataSet.Hastalar);
             this.WindowState = FormWindowState.Maximized; // Formu tam ekran yap
@@ -85,6 +87,29 @@ namespace EczaneOtomasyon2024
                 DataTable dt3 = new DataTable();
                 adapter3.Fill(dt3);
                 ecz_dgw_hastaAra.DataSource = dt3;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("HATA! : " + ex.Message);
+            }
+            finally
+            {
+                baglanti1.Close();
+            }
+        }
+
+        private void ecz_btn_ilacAra_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                baglanti1.Open();
+                SqlCommand IlacAra1 = new SqlCommand("SELECT Id,Barkod,UrunAdi,EtkinMadde,ATCKodu,RuhsatSahibi,RuhsatTarihi,RuhsatNumarasi,KullanimYasi FROM Ilaclar WHERE UrunAdi LIKE @deger2", baglanti1);
+                IlacAra1.Parameters.AddWithValue("@deger2", "%" + ecz_txt_ilacAra.Text + "%");
+
+                SqlDataAdapter adapter5 = new SqlDataAdapter(IlacAra1);
+                DataTable dt5 = new DataTable();
+                adapter5.Fill(dt5);
+                ecz_dgw_ilaclar.DataSource = dt5;
             }
             catch (Exception ex)
             {

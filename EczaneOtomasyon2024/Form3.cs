@@ -273,7 +273,7 @@ namespace EczaneOtomasyon2024
             try
             {
                 baglanti1.Open();
-                SqlCommand IlacAra = new SqlCommand("SELECT Id,Barkod,UrunAdi,EtkinMadde,ATCKodu,RuhsatSahibi,RuhsatTarihi,RuhsatNumarasi,KullanimYasi FROM Ilaclar WHERE UrunAdi LIKE @deger2", baglanti1);
+                SqlCommand IlacAra = new SqlCommand("SELECT * FROM Ilaclar WHERE UrunAdi LIKE @deger2", baglanti1);
                 IlacAra.Parameters.AddWithValue("@deger2", "%" + dr_txt_ilacAra.Text + "%");
 
                 SqlDataAdapter adapter1 = new SqlDataAdapter(IlacAra);

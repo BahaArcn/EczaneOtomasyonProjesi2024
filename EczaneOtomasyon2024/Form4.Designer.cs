@@ -39,16 +39,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.ecz_dgw_hastaAra = new System.Windows.Forms.DataGridView();
-            this.ecz_btn_hastaAra = new System.Windows.Forms.Button();
-            this.ecz_txt_hastaAra = new System.Windows.Forms.TextBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ecz_btn_anaMenü = new System.Windows.Forms.Button();
-            this.ecz_btn_cikis = new System.Windows.Forms.Button();
-            this.eczaneOtomasyonuDBDataSet = new EczaneOtomasyon2024.EczaneOtomasyonuDBDataSet();
-            this.hastalarBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hastalarTableAdapter = new EczaneOtomasyon2024.EczaneOtomasyonuDBDataSetTableAdapters.HastalarTableAdapter();
             this.adDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soyadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,13 +47,48 @@
             this.ilçeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ilDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alerjiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hastalarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eczaneOtomasyonuDBDataSet = new EczaneOtomasyon2024.EczaneOtomasyonuDBDataSet();
+            this.ecz_btn_hastaAra = new System.Windows.Forms.Button();
+            this.ecz_txt_hastaAra = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.ecz_dgw_ilaclar = new System.Windows.Forms.DataGridView();
+            this.ıdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barkodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urunAdiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.etkinMaddeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aTCKoduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ruhsatSahibiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ruhsatTarihiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ruhsatNumarasiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kullanimYasiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fiyatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stokAdediDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ılaclarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ecz_btn_ilacAra = new System.Windows.Forms.Button();
+            this.ecz_txt_ilacAra = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ecz_btn_anaMenü = new System.Windows.Forms.Button();
+            this.ecz_btn_cikis = new System.Windows.Forms.Button();
+            this.hastalarTableAdapter = new EczaneOtomasyon2024.EczaneOtomasyonuDBDataSetTableAdapters.HastalarTableAdapter();
+            this.ilaclarTableAdapter = new EczaneOtomasyon2024.EczaneOtomasyonuDBDataSetTableAdapters.IlaclarTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ecz_dgw_receteSorgu)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ecz_dgw_hastaAra)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eczaneOtomasyonuDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hastalarBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eczaneOtomasyonuDBDataSet)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ecz_dgw_ilaclar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ılaclarBindingSource)).BeginInit();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -186,91 +211,6 @@
             this.ecz_dgw_hastaAra.Size = new System.Drawing.Size(1878, 840);
             this.ecz_dgw_hastaAra.TabIndex = 2;
             // 
-            // ecz_btn_hastaAra
-            // 
-            this.ecz_btn_hastaAra.Location = new System.Drawing.Point(377, 46);
-            this.ecz_btn_hastaAra.Name = "ecz_btn_hastaAra";
-            this.ecz_btn_hastaAra.Size = new System.Drawing.Size(69, 24);
-            this.ecz_btn_hastaAra.TabIndex = 1;
-            this.ecz_btn_hastaAra.Text = "ARA";
-            this.ecz_btn_hastaAra.UseVisualStyleBackColor = true;
-            this.ecz_btn_hastaAra.Click += new System.EventHandler(this.ecz_btn_hastaAra_Click);
-            // 
-            // ecz_txt_hastaAra
-            // 
-            this.ecz_txt_hastaAra.Location = new System.Drawing.Point(180, 48);
-            this.ecz_txt_hastaAra.Name = "ecz_txt_hastaAra";
-            this.ecz_txt_hastaAra.Size = new System.Drawing.Size(170, 22);
-            this.ecz_txt_hastaAra.TabIndex = 0;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1912, 928);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "İLAÇLAR";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1912, 928);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "SEPET";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(12, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 38);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Eczacı Arayüzü";
-            // 
-            // ecz_btn_anaMenü
-            // 
-            this.ecz_btn_anaMenü.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ecz_btn_anaMenü.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ecz_btn_anaMenü.ForeColor = System.Drawing.Color.Red;
-            this.ecz_btn_anaMenü.Location = new System.Drawing.Point(1681, 12);
-            this.ecz_btn_anaMenü.Name = "ecz_btn_anaMenü";
-            this.ecz_btn_anaMenü.Size = new System.Drawing.Size(139, 58);
-            this.ecz_btn_anaMenü.TabIndex = 2;
-            this.ecz_btn_anaMenü.Text = "ANA MENÜ";
-            this.ecz_btn_anaMenü.UseVisualStyleBackColor = true;
-            this.ecz_btn_anaMenü.Click += new System.EventHandler(this.ecz_btn_anaMenü_Click);
-            // 
-            // ecz_btn_cikis
-            // 
-            this.ecz_btn_cikis.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ecz_btn_cikis.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ecz_btn_cikis.ForeColor = System.Drawing.Color.Red;
-            this.ecz_btn_cikis.Location = new System.Drawing.Point(1837, 12);
-            this.ecz_btn_cikis.Name = "ecz_btn_cikis";
-            this.ecz_btn_cikis.Size = new System.Drawing.Size(139, 58);
-            this.ecz_btn_cikis.TabIndex = 3;
-            this.ecz_btn_cikis.Text = "ÇIKIŞ";
-            this.ecz_btn_cikis.UseVisualStyleBackColor = true;
-            this.ecz_btn_cikis.Click += new System.EventHandler(this.ecz_btn_cikis_Click);
-            // 
-            // eczaneOtomasyonuDBDataSet
-            // 
-            this.eczaneOtomasyonuDBDataSet.DataSetName = "EczaneOtomasyonuDBDataSet";
-            this.eczaneOtomasyonuDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // hastalarBindingSource
-            // 
-            this.hastalarBindingSource.DataMember = "Hastalar";
-            this.hastalarBindingSource.DataSource = this.eczaneOtomasyonuDBDataSet;
-            // 
-            // hastalarTableAdapter
-            // 
-            this.hastalarTableAdapter.ClearBeforeFill = true;
-            // 
             // adDataGridViewTextBoxColumn
             // 
             this.adDataGridViewTextBoxColumn.DataPropertyName = "Ad";
@@ -327,6 +267,274 @@
             this.alerjiDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.alerjiDataGridViewTextBoxColumn.Name = "alerjiDataGridViewTextBoxColumn";
             // 
+            // hastalarBindingSource
+            // 
+            this.hastalarBindingSource.DataMember = "Hastalar";
+            this.hastalarBindingSource.DataSource = this.eczaneOtomasyonuDBDataSet;
+            // 
+            // eczaneOtomasyonuDBDataSet
+            // 
+            this.eczaneOtomasyonuDBDataSet.DataSetName = "EczaneOtomasyonuDBDataSet";
+            this.eczaneOtomasyonuDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ecz_btn_hastaAra
+            // 
+            this.ecz_btn_hastaAra.Location = new System.Drawing.Point(377, 46);
+            this.ecz_btn_hastaAra.Name = "ecz_btn_hastaAra";
+            this.ecz_btn_hastaAra.Size = new System.Drawing.Size(69, 24);
+            this.ecz_btn_hastaAra.TabIndex = 1;
+            this.ecz_btn_hastaAra.Text = "ARA";
+            this.ecz_btn_hastaAra.UseVisualStyleBackColor = true;
+            this.ecz_btn_hastaAra.Click += new System.EventHandler(this.ecz_btn_hastaAra_Click);
+            // 
+            // ecz_txt_hastaAra
+            // 
+            this.ecz_txt_hastaAra.Location = new System.Drawing.Point(180, 48);
+            this.ecz_txt_hastaAra.Name = "ecz_txt_hastaAra";
+            this.ecz_txt_hastaAra.Size = new System.Drawing.Size(170, 22);
+            this.ecz_txt_hastaAra.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.ecz_dgw_ilaclar);
+            this.tabPage3.Controls.Add(this.ecz_btn_ilacAra);
+            this.tabPage3.Controls.Add(this.ecz_txt_ilacAra);
+            this.tabPage3.Controls.Add(this.label4);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1912, 928);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "İLAÇLAR";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // ecz_dgw_ilaclar
+            // 
+            this.ecz_dgw_ilaclar.AutoGenerateColumns = false;
+            this.ecz_dgw_ilaclar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ecz_dgw_ilaclar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ecz_dgw_ilaclar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ıdDataGridViewTextBoxColumn,
+            this.barkodDataGridViewTextBoxColumn,
+            this.urunAdiDataGridViewTextBoxColumn,
+            this.etkinMaddeDataGridViewTextBoxColumn,
+            this.aTCKoduDataGridViewTextBoxColumn,
+            this.ruhsatSahibiDataGridViewTextBoxColumn,
+            this.ruhsatTarihiDataGridViewTextBoxColumn,
+            this.ruhsatNumarasiDataGridViewTextBoxColumn,
+            this.kullanimYasiDataGridViewTextBoxColumn,
+            this.fiyatDataGridViewTextBoxColumn,
+            this.stokAdediDataGridViewTextBoxColumn});
+            this.ecz_dgw_ilaclar.DataSource = this.ılaclarBindingSource;
+            this.ecz_dgw_ilaclar.Location = new System.Drawing.Point(3, 112);
+            this.ecz_dgw_ilaclar.Name = "ecz_dgw_ilaclar";
+            this.ecz_dgw_ilaclar.RowHeadersWidth = 51;
+            this.ecz_dgw_ilaclar.RowTemplate.Height = 24;
+            this.ecz_dgw_ilaclar.Size = new System.Drawing.Size(1900, 813);
+            this.ecz_dgw_ilaclar.TabIndex = 3;
+            // 
+            // ıdDataGridViewTextBoxColumn
+            // 
+            this.ıdDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.ıdDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.ıdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ıdDataGridViewTextBoxColumn.Name = "ıdDataGridViewTextBoxColumn";
+            // 
+            // barkodDataGridViewTextBoxColumn
+            // 
+            this.barkodDataGridViewTextBoxColumn.DataPropertyName = "Barkod";
+            this.barkodDataGridViewTextBoxColumn.HeaderText = "Barkod";
+            this.barkodDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.barkodDataGridViewTextBoxColumn.Name = "barkodDataGridViewTextBoxColumn";
+            // 
+            // urunAdiDataGridViewTextBoxColumn
+            // 
+            this.urunAdiDataGridViewTextBoxColumn.DataPropertyName = "UrunAdi";
+            this.urunAdiDataGridViewTextBoxColumn.HeaderText = "UrunAdi";
+            this.urunAdiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.urunAdiDataGridViewTextBoxColumn.Name = "urunAdiDataGridViewTextBoxColumn";
+            // 
+            // etkinMaddeDataGridViewTextBoxColumn
+            // 
+            this.etkinMaddeDataGridViewTextBoxColumn.DataPropertyName = "EtkinMadde";
+            this.etkinMaddeDataGridViewTextBoxColumn.HeaderText = "EtkinMadde";
+            this.etkinMaddeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.etkinMaddeDataGridViewTextBoxColumn.Name = "etkinMaddeDataGridViewTextBoxColumn";
+            // 
+            // aTCKoduDataGridViewTextBoxColumn
+            // 
+            this.aTCKoduDataGridViewTextBoxColumn.DataPropertyName = "ATCKodu";
+            this.aTCKoduDataGridViewTextBoxColumn.HeaderText = "ATCKodu";
+            this.aTCKoduDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.aTCKoduDataGridViewTextBoxColumn.Name = "aTCKoduDataGridViewTextBoxColumn";
+            // 
+            // ruhsatSahibiDataGridViewTextBoxColumn
+            // 
+            this.ruhsatSahibiDataGridViewTextBoxColumn.DataPropertyName = "RuhsatSahibi";
+            this.ruhsatSahibiDataGridViewTextBoxColumn.HeaderText = "RuhsatSahibi";
+            this.ruhsatSahibiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ruhsatSahibiDataGridViewTextBoxColumn.Name = "ruhsatSahibiDataGridViewTextBoxColumn";
+            // 
+            // ruhsatTarihiDataGridViewTextBoxColumn
+            // 
+            this.ruhsatTarihiDataGridViewTextBoxColumn.DataPropertyName = "RuhsatTarihi";
+            this.ruhsatTarihiDataGridViewTextBoxColumn.HeaderText = "RuhsatTarihi";
+            this.ruhsatTarihiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ruhsatTarihiDataGridViewTextBoxColumn.Name = "ruhsatTarihiDataGridViewTextBoxColumn";
+            // 
+            // ruhsatNumarasiDataGridViewTextBoxColumn
+            // 
+            this.ruhsatNumarasiDataGridViewTextBoxColumn.DataPropertyName = "RuhsatNumarasi";
+            this.ruhsatNumarasiDataGridViewTextBoxColumn.HeaderText = "RuhsatNumarasi";
+            this.ruhsatNumarasiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ruhsatNumarasiDataGridViewTextBoxColumn.Name = "ruhsatNumarasiDataGridViewTextBoxColumn";
+            // 
+            // kullanimYasiDataGridViewTextBoxColumn
+            // 
+            this.kullanimYasiDataGridViewTextBoxColumn.DataPropertyName = "KullanimYasi";
+            this.kullanimYasiDataGridViewTextBoxColumn.HeaderText = "KullanimYasi";
+            this.kullanimYasiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.kullanimYasiDataGridViewTextBoxColumn.Name = "kullanimYasiDataGridViewTextBoxColumn";
+            // 
+            // fiyatDataGridViewTextBoxColumn
+            // 
+            this.fiyatDataGridViewTextBoxColumn.DataPropertyName = "Fiyat";
+            this.fiyatDataGridViewTextBoxColumn.HeaderText = "Fiyat";
+            this.fiyatDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fiyatDataGridViewTextBoxColumn.Name = "fiyatDataGridViewTextBoxColumn";
+            // 
+            // stokAdediDataGridViewTextBoxColumn
+            // 
+            this.stokAdediDataGridViewTextBoxColumn.DataPropertyName = "Stok Adedi";
+            this.stokAdediDataGridViewTextBoxColumn.HeaderText = "Stok Adedi";
+            this.stokAdediDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.stokAdediDataGridViewTextBoxColumn.Name = "stokAdediDataGridViewTextBoxColumn";
+            // 
+            // ılaclarBindingSource
+            // 
+            this.ılaclarBindingSource.DataMember = "Ilaclar";
+            this.ılaclarBindingSource.DataSource = this.eczaneOtomasyonuDBDataSet;
+            // 
+            // ecz_btn_ilacAra
+            // 
+            this.ecz_btn_ilacAra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ecz_btn_ilacAra.Location = new System.Drawing.Point(391, 41);
+            this.ecz_btn_ilacAra.Name = "ecz_btn_ilacAra";
+            this.ecz_btn_ilacAra.Size = new System.Drawing.Size(77, 33);
+            this.ecz_btn_ilacAra.TabIndex = 2;
+            this.ecz_btn_ilacAra.Text = "ARA";
+            this.ecz_btn_ilacAra.UseVisualStyleBackColor = true;
+            this.ecz_btn_ilacAra.Click += new System.EventHandler(this.ecz_btn_ilacAra_Click);
+            // 
+            // ecz_txt_ilacAra
+            // 
+            this.ecz_txt_ilacAra.Location = new System.Drawing.Point(162, 52);
+            this.ecz_txt_ilacAra.Name = "ecz_txt_ilacAra";
+            this.ecz_txt_ilacAra.Size = new System.Drawing.Size(200, 22);
+            this.ecz_txt_ilacAra.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(53, 50);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(103, 22);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "İLAÇ ADI: ";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.button1);
+            this.tabPage4.Controls.Add(this.label7);
+            this.tabPage4.Controls.Add(this.label6);
+            this.tabPage4.Controls.Add(this.label5);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1912, 928);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "SEPET";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(187, 279);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(182, 98);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 16);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "label7";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(182, 198);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 16);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "label6";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(182, 149);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 16);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "label5";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(12, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(259, 38);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Eczacı Arayüzü";
+            // 
+            // ecz_btn_anaMenü
+            // 
+            this.ecz_btn_anaMenü.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ecz_btn_anaMenü.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ecz_btn_anaMenü.ForeColor = System.Drawing.Color.Red;
+            this.ecz_btn_anaMenü.Location = new System.Drawing.Point(1681, 12);
+            this.ecz_btn_anaMenü.Name = "ecz_btn_anaMenü";
+            this.ecz_btn_anaMenü.Size = new System.Drawing.Size(139, 58);
+            this.ecz_btn_anaMenü.TabIndex = 2;
+            this.ecz_btn_anaMenü.Text = "ANA MENÜ";
+            this.ecz_btn_anaMenü.UseVisualStyleBackColor = true;
+            this.ecz_btn_anaMenü.Click += new System.EventHandler(this.ecz_btn_anaMenü_Click);
+            // 
+            // ecz_btn_cikis
+            // 
+            this.ecz_btn_cikis.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ecz_btn_cikis.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ecz_btn_cikis.ForeColor = System.Drawing.Color.Red;
+            this.ecz_btn_cikis.Location = new System.Drawing.Point(1837, 12);
+            this.ecz_btn_cikis.Name = "ecz_btn_cikis";
+            this.ecz_btn_cikis.Size = new System.Drawing.Size(139, 58);
+            this.ecz_btn_cikis.TabIndex = 3;
+            this.ecz_btn_cikis.Text = "ÇIKIŞ";
+            this.ecz_btn_cikis.UseVisualStyleBackColor = true;
+            this.ecz_btn_cikis.Click += new System.EventHandler(this.ecz_btn_cikis_Click);
+            // 
+            // hastalarTableAdapter
+            // 
+            this.hastalarTableAdapter.ClearBeforeFill = true;
+            // 
+            // ilaclarTableAdapter
+            // 
+            this.ilaclarTableAdapter.ClearBeforeFill = true;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -345,8 +553,14 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ecz_dgw_hastaAra)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eczaneOtomasyonuDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hastalarBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eczaneOtomasyonuDBDataSet)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ecz_dgw_ilaclar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ılaclarBindingSource)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,5 +596,26 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ilçeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ilDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn alerjiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button ecz_btn_ilacAra;
+        private System.Windows.Forms.TextBox ecz_txt_ilacAra;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView ecz_dgw_ilaclar;
+        private System.Windows.Forms.BindingSource ılaclarBindingSource;
+        private EczaneOtomasyonuDBDataSetTableAdapters.IlaclarTableAdapter ilaclarTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ıdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn barkodDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn urunAdiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn etkinMaddeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aTCKoduDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ruhsatSahibiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ruhsatTarihiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ruhsatNumarasiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kullanimYasiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fiyatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stokAdediDataGridViewTextBoxColumn;
     }
 }
