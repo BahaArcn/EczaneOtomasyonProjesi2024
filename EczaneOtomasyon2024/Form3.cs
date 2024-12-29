@@ -302,7 +302,7 @@ namespace EczaneOtomasyon2024
                 SqlDataAdapter adapter1 = new SqlDataAdapter(hastaAra);
                 DataTable dt1 = new DataTable();
                 adapter1.Fill(dt1);
-                dr_dgw_hastalar.DataSource = dt1;
+                dr_dgw_hastalar.DataSource = dt1; 
             }
             catch (Exception ex)
             {
@@ -322,6 +322,15 @@ namespace EczaneOtomasyon2024
                 SqlCommand ReceteSorgu2 = new SqlCommand("sp_ReceteBul", baglanti1);
                 ReceteSorgu2.CommandType = CommandType.StoredProcedure;
                 ReceteSorgu2.Parameters.AddWithValue("@alınanReceteID", dr_txt_receteSorgu.Text);
+                SqlParameter receteSahibiParam = new SqlParameter("@receteSahibi", SqlDbType.NVarChar, 50);
+                SqlParameter tcNoParam = new SqlParameter("@tcNo", SqlDbType.BigInt);
+                receteSahibiParam.Direction = ParameterDirection.Output;
+                tcNoParam.Direction = ParameterDirection.Output;
+                ReceteSorgu2.Parameters.Add(receteSahibiParam);
+                ReceteSorgu2.Parameters.Add(tcNoParam);
+                ReceteSorgu2.ExecuteNonQuery();
+                double tcNo = Convert.ToDouble(ReceteSorgu2.Parameters["@tcNo"].Value);
+                string receteSahibi = Convert.ToString(ReceteSorgu2.Parameters["@receteSahibi"].Value);
                 SqlDataAdapter adapter2 = new SqlDataAdapter(ReceteSorgu2);
                 DataTable dt2 = new DataTable();
                 adapter2.Fill(dt2);
