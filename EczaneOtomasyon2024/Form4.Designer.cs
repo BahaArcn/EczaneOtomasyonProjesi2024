@@ -30,7 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.ecz_lbl_indirimMiktari = new System.Windows.Forms.TabPage();
+            this.ecz_lbl_odenecekFiyat = new System.Windows.Forms.Label();
+            this.ecz_lbl = new System.Windows.Forms.Label();
+            this.ecz_lbl_sigortaTuru = new System.Windows.Forms.Label();
+            this.ecz_lbl_toplamFiyat = new System.Windows.Forms.Label();
+            this.ecz_btn_satisYap = new System.Windows.Forms.Button();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ecz_dgw_receteSorgu = new System.Windows.Forms.DataGridView();
             this.ecz_btn_receteAra = new System.Windows.Forms.Button();
@@ -78,8 +89,10 @@
             this.ecz_btn_cikis = new System.Windows.Forms.Button();
             this.hastalarTableAdapter = new EczaneOtomasyon2024.EczaneOtomasyonuDBDataSetTableAdapters.HastalarTableAdapter();
             this.ilaclarTableAdapter = new EczaneOtomasyon2024.EczaneOtomasyonuDBDataSetTableAdapters.IlaclarTableAdapter();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.ecz_lbl_indirimMiktari.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ecz_dgw_receteSorgu)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ecz_dgw_hastaAra)).BeginInit();
@@ -89,13 +102,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.ecz_dgw_ilaclar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ılaclarBindingSource)).BeginInit();
             this.tabPage4.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.ecz_lbl_indirimMiktari);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(5, 103);
             this.tabControl1.Name = "tabControl1";
@@ -103,20 +119,141 @@
             this.tabControl1.Size = new System.Drawing.Size(1920, 957);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage1
+            // ecz_lbl_indirimMiktari
             // 
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.ecz_dgw_receteSorgu);
-            this.tabPage1.Controls.Add(this.ecz_btn_receteAra);
-            this.tabPage1.Controls.Add(this.ecz_lbl_receteSorgu);
-            this.tabPage1.Controls.Add(this.ecz_txt_receteAra);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1912, 928);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "REÇETE SORGULA";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.ecz_lbl_indirimMiktari.Controls.Add(this.ecz_lbl_odenecekFiyat);
+            this.ecz_lbl_indirimMiktari.Controls.Add(this.ecz_lbl);
+            this.ecz_lbl_indirimMiktari.Controls.Add(this.ecz_lbl_sigortaTuru);
+            this.ecz_lbl_indirimMiktari.Controls.Add(this.ecz_lbl_toplamFiyat);
+            this.ecz_lbl_indirimMiktari.Controls.Add(this.ecz_btn_satisYap);
+            this.ecz_lbl_indirimMiktari.Controls.Add(this.checkBox2);
+            this.ecz_lbl_indirimMiktari.Controls.Add(this.checkBox1);
+            this.ecz_lbl_indirimMiktari.Controls.Add(this.label11);
+            this.ecz_lbl_indirimMiktari.Controls.Add(this.label10);
+            this.ecz_lbl_indirimMiktari.Controls.Add(this.label9);
+            this.ecz_lbl_indirimMiktari.Controls.Add(this.label8);
+            this.ecz_lbl_indirimMiktari.Controls.Add(this.label2);
+            this.ecz_lbl_indirimMiktari.Controls.Add(this.ecz_dgw_receteSorgu);
+            this.ecz_lbl_indirimMiktari.Controls.Add(this.ecz_btn_receteAra);
+            this.ecz_lbl_indirimMiktari.Controls.Add(this.ecz_lbl_receteSorgu);
+            this.ecz_lbl_indirimMiktari.Controls.Add(this.ecz_txt_receteAra);
+            this.ecz_lbl_indirimMiktari.Location = new System.Drawing.Point(4, 25);
+            this.ecz_lbl_indirimMiktari.Name = "ecz_lbl_indirimMiktari";
+            this.ecz_lbl_indirimMiktari.Padding = new System.Windows.Forms.Padding(3);
+            this.ecz_lbl_indirimMiktari.Size = new System.Drawing.Size(1912, 928);
+            this.ecz_lbl_indirimMiktari.TabIndex = 0;
+            this.ecz_lbl_indirimMiktari.Text = "REÇETE SORGULA";
+            this.ecz_lbl_indirimMiktari.UseVisualStyleBackColor = true;
+            // 
+            // ecz_lbl_odenecekFiyat
+            // 
+            this.ecz_lbl_odenecekFiyat.AutoSize = true;
+            this.ecz_lbl_odenecekFiyat.Location = new System.Drawing.Point(1526, 741);
+            this.ecz_lbl_odenecekFiyat.Name = "ecz_lbl_odenecekFiyat";
+            this.ecz_lbl_odenecekFiyat.Size = new System.Drawing.Size(10, 16);
+            this.ecz_lbl_odenecekFiyat.TabIndex = 15;
+            this.ecz_lbl_odenecekFiyat.Text = ".";
+            // 
+            // ecz_lbl
+            // 
+            this.ecz_lbl.AutoSize = true;
+            this.ecz_lbl.Location = new System.Drawing.Point(1526, 677);
+            this.ecz_lbl.Name = "ecz_lbl";
+            this.ecz_lbl.Size = new System.Drawing.Size(10, 16);
+            this.ecz_lbl.TabIndex = 14;
+            this.ecz_lbl.Text = ".";
+            // 
+            // ecz_lbl_sigortaTuru
+            // 
+            this.ecz_lbl_sigortaTuru.AutoSize = true;
+            this.ecz_lbl_sigortaTuru.Location = new System.Drawing.Point(1526, 641);
+            this.ecz_lbl_sigortaTuru.Name = "ecz_lbl_sigortaTuru";
+            this.ecz_lbl_sigortaTuru.Size = new System.Drawing.Size(10, 16);
+            this.ecz_lbl_sigortaTuru.TabIndex = 13;
+            this.ecz_lbl_sigortaTuru.Text = ".";
+            // 
+            // ecz_lbl_toplamFiyat
+            // 
+            this.ecz_lbl_toplamFiyat.AutoSize = true;
+            this.ecz_lbl_toplamFiyat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ecz_lbl_toplamFiyat.Location = new System.Drawing.Point(1525, 594);
+            this.ecz_lbl_toplamFiyat.Name = "ecz_lbl_toplamFiyat";
+            this.ecz_lbl_toplamFiyat.Size = new System.Drawing.Size(15, 22);
+            this.ecz_lbl_toplamFiyat.TabIndex = 12;
+            this.ecz_lbl_toplamFiyat.Text = ".";
+            // 
+            // ecz_btn_satisYap
+            // 
+            this.ecz_btn_satisYap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ecz_btn_satisYap.Location = new System.Drawing.Point(1462, 838);
+            this.ecz_btn_satisYap.Name = "ecz_btn_satisYap";
+            this.ecz_btn_satisYap.Size = new System.Drawing.Size(271, 65);
+            this.ecz_btn_satisYap.TabIndex = 11;
+            this.ecz_btn_satisYap.Text = "Satış Yap";
+            this.ecz_btn_satisYap.UseVisualStyleBackColor = true;
+            this.ecz_btn_satisYap.Click += new System.EventHandler(this.ecz_btn_satisYap_Click);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.checkBox2.Location = new System.Drawing.Point(1581, 789);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(110, 24);
+            this.checkBox2.TabIndex = 10;
+            this.checkBox2.Text = "Kredi Kartı";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.checkBox1.Location = new System.Drawing.Point(1462, 789);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(69, 24);
+            this.checkBox1.TabIndex = 9;
+            this.checkBox1.Text = "Nakit";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label11.Location = new System.Drawing.Point(1318, 735);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(151, 22);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Ödenecek Fiyat : ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label10.Location = new System.Drawing.Point(1335, 671);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(134, 22);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "İndirim Miktarı : ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label9.Location = new System.Drawing.Point(1344, 635);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(125, 22);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Sigorta Türü : ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.Location = new System.Drawing.Point(1340, 594);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(129, 22);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Toplam Fiyat : ";
             // 
             // label2
             // 
@@ -135,7 +272,7 @@
             this.ecz_dgw_receteSorgu.Name = "ecz_dgw_receteSorgu";
             this.ecz_dgw_receteSorgu.RowHeadersWidth = 51;
             this.ecz_dgw_receteSorgu.RowTemplate.Height = 24;
-            this.ecz_dgw_receteSorgu.Size = new System.Drawing.Size(1894, 835);
+            this.ecz_dgw_receteSorgu.Size = new System.Drawing.Size(1894, 451);
             this.ecz_dgw_receteSorgu.TabIndex = 3;
             // 
             // ecz_btn_receteAra
@@ -535,6 +672,26 @@
             // 
             this.ilaclarTableAdapter.ClearBeforeFill = true;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(1912, 928);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "DİĞER ÜRÜNLER";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(10, 100);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1893, 495);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -547,8 +704,8 @@
             this.Name = "Form4";
             this.Load += new System.EventHandler(this.Form4_Load);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.ecz_lbl_indirimMiktari.ResumeLayout(false);
+            this.ecz_lbl_indirimMiktari.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ecz_dgw_receteSorgu)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -561,6 +718,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ılaclarBindingSource)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -569,7 +728,7 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage ecz_lbl_indirimMiktari;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ecz_btn_anaMenü;
@@ -617,5 +776,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn kullanimYasiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fiyatDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stokAdediDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label ecz_lbl_odenecekFiyat;
+        private System.Windows.Forms.Label ecz_lbl;
+        private System.Windows.Forms.Label ecz_lbl_sigortaTuru;
+        private System.Windows.Forms.Label ecz_lbl_toplamFiyat;
+        private System.Windows.Forms.Button ecz_btn_satisYap;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

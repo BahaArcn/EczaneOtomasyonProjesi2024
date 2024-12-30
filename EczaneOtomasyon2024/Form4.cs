@@ -40,6 +40,51 @@ namespace EczaneOtomasyon2024
                 adapter3.Fill(dt3);
                 ecz_dgw_receteSorgu.DataSource = dt3;
                 ecz_lbl_receteSorgu.Text = receteSahibi1 + " " + tcNo1;
+                SqlCommand sigortaTuru = new SqlCommand("SELECT Sigorta FROM Hastalar WHERE TC=@deger7 ", baglanti1);
+                sigortaTuru.Parameters.AddWithValue("@deger7",tcNo1);
+                object result2 = sigortaTuru.ExecuteScalar(); // İlk sonucu al
+                string sigorta = result2?.ToString() ?? "Sonuç bulunamadı";
+                ecz_lbl_sigortaTuru.Text = sigorta;
+
+                SqlCommand satildiMi = new SqlCommand("SELECT Satildi FROM Receteler WHERE ReceteID=@deger8", baglanti1);
+                satildiMi.Parameters.AddWithValue("@deger8", ecz_txt_receteAra.Text);
+                object result3 = satildiMi.ExecuteScalar();
+                string satildi = result3.ToString();
+                if(satildi=="Satilmadi")
+                {
+                    ecz_btn_satisYap.Enabled = true;
+                    ecz_btn_satisYap.Text = "Satış Yap";
+                }
+                else
+                {
+                    ecz_btn_satisYap.Enabled = false;
+                    ecz_btn_satisYap.Text = "Bu reçete zaten satılmış";
+                }
+
+                SqlCommand toplamFiyat = new SqlCommand("SELECT dbo.ReceteToplamFiyat(@ReceteID) AS ToplamFiyat", baglanti1);
+                toplamFiyat.Parameters.Add(new SqlParameter("@ReceteID", SqlDbType.Int)
+                {
+                    Value = Convert.ToInt16(ecz_txt_receteAra.Text)
+                });
+
+                object result = toplamFiyat.ExecuteScalar();
+                ecz_lbl_toplamFiyat.Text = result.ToString() + "  TL";
+                if (sigorta == "SGK")
+                {
+                    ecz_lbl.Text = Convert.ToString(Convert.ToInt16(result) * 0.20);
+                    ecz_lbl_odenecekFiyat.Text = Convert.ToString(Convert.ToInt16(result) * 0.80);
+                }
+                else if (sigorta == "BAĞKUR")
+                {
+                    ecz_lbl.Text = ""+Convert.ToString(Convert.ToInt16(result) * 0.10);
+                    ecz_lbl_odenecekFiyat.Text = Convert.ToString(Convert.ToInt16(result) * 0.90);
+                }
+                else
+                {
+                    ecz_lbl.Text = "0";
+                    ecz_lbl_odenecekFiyat.Text = Convert.ToString(result);
+                }
+                
             }
             catch (Exception ex)
             {
@@ -53,10 +98,7 @@ namespace EczaneOtomasyon2024
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'eczaneOtomasyonuDBDataSet.Ilaclar' table. You can move, or remove it, as needed.
             this.ilaclarTableAdapter.Fill(this.eczaneOtomasyonuDBDataSet.Ilaclar);
-            // TODO: This line of code loads data into the 'eczaneOtomasyonuDBDataSet.Hastalar' table. You can move, or remove it, as needed.
-            this.hastalarTableAdapter.Fill(this.eczaneOtomasyonuDBDataSet.Hastalar);
             this.WindowState = FormWindowState.Maximized; // Formu tam ekran yap
             this.FormBorderStyle = FormBorderStyle.None;  // Kenarlıkları kaldır
             this.TopMost = true;                          // Her zaman en üstte olsun
@@ -82,12 +124,12 @@ namespace EczaneOtomasyon2024
                 baglanti1.Open();
                 SqlCommand hastaAra3 = new SqlCommand("SELECT * FROM Hastalar WHERE TC LIKE @deger4", baglanti1);
                 hastaAra3.Parameters.AddWithValue("@deger4", ecz_txt_hastaAra.Text + "%");
-
                 SqlDataAdapter adapter3 = new SqlDataAdapter(hastaAra3);
                 DataTable dt3 = new DataTable();
                 adapter3.Fill(dt3);
                 ecz_dgw_hastaAra.DataSource = dt3;
-            }
+                hastaAra3.ExecuteNonQuery();
+            }   
             catch (Exception ex)
             {
                 MessageBox.Show("HATA! : " + ex.Message);
@@ -110,6 +152,27 @@ namespace EczaneOtomasyon2024
                 DataTable dt5 = new DataTable();
                 adapter5.Fill(dt5);
                 ecz_dgw_ilaclar.DataSource = dt5;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("HATA! : " + ex.Message);
+            }
+            finally
+            {
+                baglanti1.Close();
+            }
+        }
+
+        private void ecz_btn_satisYap_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                baglanti1.Open();
+                SqlCommand satisYap = new SqlCommand("UPDATE Receteler SET Satildi = 'Satildi' WHERE ReceteID=@deger8",baglanti1);
+                satisYap.Parameters.AddWithValue("@deger8", ecz_txt_receteAra.Text);
+                ecz_btn_satisYap.Enabled = false;
+                ecz_btn_satisYap.Text = "Bu reçete zaten satılmış";
+                satisYap.ExecuteNonQuery();
             }
             catch (Exception ex)
             {

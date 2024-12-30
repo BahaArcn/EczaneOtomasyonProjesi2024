@@ -50,7 +50,6 @@ namespace EczaneOtomasyon2024
             dr_lbl_mesaj.Visible = false;
             dr_dgw_receteSorgu.DataSource = null;
             this.ilaclarTableAdapter.Fill(this.eczaneOtomasyonuDBDataSet.Ilaclar);
-            this.hastalarTableAdapter.Fill(this.eczaneOtomasyonuDBDataSet.Hastalar);
 
             dr_tabC.Appearance = TabAppearance.FlatButtons;
             dr_tabC.ItemSize = new Size(0, 1);
