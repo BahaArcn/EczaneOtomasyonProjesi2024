@@ -167,12 +167,63 @@ namespace EczaneOtomasyon2024
         {
             try
             {
+
+                bool stokSorunuVar = false; // Stok kontrolü sonucu için bir bayrak
+                string hataMesaji = "Stokta olmayan ilaçlar:\n";
+
                 baglanti1.Open();
-                SqlCommand satisYap = new SqlCommand("UPDATE Receteler SET Satildi = 'Satildi' WHERE ReceteID=@deger8",baglanti1);
-                satisYap.Parameters.AddWithValue("@deger8", ecz_txt_receteAra.Text);
-                ecz_btn_satisYap.Enabled = false;
-                ecz_btn_satisYap.Text = "Bu reçete zaten satılmış";
-                satisYap.ExecuteNonQuery();
+                foreach (DataGridViewRow row in ecz_dgw_receteSorgu.Rows)
+                {
+                    if (row.Cells["Id"].Value != null) // IlacID kontrolü
+                    {
+                        int ilacID = Convert.ToInt32(row.Cells["Id"].Value);
+
+                        // Stok kontrolü için SQL komutu
+                        string stokKontrolQuery = "SELECT [Stok Adedi] FROM Ilaclar WHERE Id = @IlacID";
+                        using (SqlCommand stokKontrolCmd = new SqlCommand(stokKontrolQuery, baglanti1))
+                        {
+                            stokKontrolCmd.Parameters.AddWithValue("@IlacID", ilacID);
+                            int stok = Convert.ToInt32(stokKontrolCmd.ExecuteScalar());
+
+                            if (stok <= 0)
+                            {
+                                if (ilacID == 0)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    stokSorunuVar = true;
+                                    hataMesaji += $"- İlaç ID: {ilacID}\n";
+                                }
+                            }
+                            else
+                            {
+                                // Stok güncelleme komutu
+                                string stokGuncelleQuery = "UPDATE Ilaclar SET [Stok Adedi] = [Stok Adedi] - 1 WHERE Id = @IlacID";
+                                using (SqlCommand stokGuncelleCmd = new SqlCommand(stokGuncelleQuery, baglanti1))
+                                {
+                                    stokGuncelleCmd.Parameters.AddWithValue("@IlacID", ilacID);
+                                    stokGuncelleCmd.ExecuteNonQuery();
+                                    SqlCommand satisYap = new SqlCommand("UPDATE Receteler SET Satildi = 'Satildi' WHERE ReceteID=@deger8", baglanti1);
+                                    satisYap.Parameters.AddWithValue("@deger8", ecz_txt_receteAra.Text);
+                                    ecz_btn_satisYap.Enabled = false;
+                                    ecz_btn_satisYap.Text = "Bu reçete zaten satılmış";
+                                    satisYap.ExecuteNonQuery();
+                                }
+                            }
+                        }
+                    }
+                }
+                if (stokSorunuVar)
+                {
+                    MessageBox.Show(hataMesaji, "Stok Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Satış başarıyla tamamlandı.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
             }
             catch (Exception ex)
             {

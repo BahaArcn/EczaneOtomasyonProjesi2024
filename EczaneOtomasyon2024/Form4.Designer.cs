@@ -79,6 +79,8 @@
             this.ecz_btn_ilacAra = new System.Windows.Forms.Button();
             this.ecz_txt_ilacAra = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -89,8 +91,10 @@
             this.ecz_btn_cikis = new System.Windows.Forms.Button();
             this.hastalarTableAdapter = new EczaneOtomasyon2024.EczaneOtomasyonuDBDataSetTableAdapters.HastalarTableAdapter();
             this.ilaclarTableAdapter = new EczaneOtomasyon2024.EczaneOtomasyonuDBDataSetTableAdapters.IlaclarTableAdapter();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.UrunID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Barkod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UrunAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fiyat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.ecz_lbl_indirimMiktari.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ecz_dgw_receteSorgu)).BeginInit();
@@ -101,9 +105,9 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ecz_dgw_ilaclar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ılaclarBindingSource)).BeginInit();
-            this.tabPage4.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -579,6 +583,32 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "İLAÇ ADI: ";
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(1912, 928);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "DİĞER ÜRÜNLER";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.UrunID,
+            this.Barkod,
+            this.UrunAdi,
+            this.Fiyat});
+            this.dataGridView1.Location = new System.Drawing.Point(10, 100);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1893, 495);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.button1);
@@ -672,25 +702,29 @@
             // 
             this.ilaclarTableAdapter.ClearBeforeFill = true;
             // 
-            // tabPage1
+            // UrunID
             // 
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1912, 928);
-            this.tabPage1.TabIndex = 4;
-            this.tabPage1.Text = "DİĞER ÜRÜNLER";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.UrunID.HeaderText = "Ürün ID";
+            this.UrunID.MinimumWidth = 6;
+            this.UrunID.Name = "UrunID";
             // 
-            // dataGridView1
+            // Barkod
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 100);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1893, 495);
-            this.dataGridView1.TabIndex = 0;
+            this.Barkod.HeaderText = "Barkod";
+            this.Barkod.MinimumWidth = 6;
+            this.Barkod.Name = "Barkod";
+            // 
+            // UrunAdi
+            // 
+            this.UrunAdi.HeaderText = "Ürün Adı";
+            this.UrunAdi.MinimumWidth = 6;
+            this.UrunAdi.Name = "UrunAdi";
+            // 
+            // Fiyat
+            // 
+            this.Fiyat.HeaderText = "Fiyat";
+            this.Fiyat.MinimumWidth = 6;
+            this.Fiyat.Name = "Fiyat";
             // 
             // Form4
             // 
@@ -716,10 +750,10 @@
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ecz_dgw_ilaclar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ılaclarBindingSource)).EndInit();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -789,5 +823,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UrunID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Barkod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UrunAdi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fiyat;
     }
 }
