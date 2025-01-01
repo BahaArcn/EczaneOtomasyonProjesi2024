@@ -30,6 +30,13 @@
         {
             this.mod_tabc = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.mod_btn_main = new System.Windows.Forms.Button();
+            this.mod_btn_login = new System.Windows.Forms.Button();
+            this.mod_txt_modPswd = new System.Windows.Forms.TextBox();
+            this.mod_txt_modUsrN = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.mod_cb_ecz = new System.Windows.Forms.CheckBox();
             this.mod_cb_dr = new System.Windows.Forms.CheckBox();
@@ -42,30 +49,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.mood_btn_usrSil = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.mod_btn_usrSil = new System.Windows.Forms.Button();
+            this.mod_txt_usrSil = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.mod_txt_modUsrN = new System.Windows.Forms.TextBox();
-            this.mod_txt_modPswd = new System.Windows.Forms.TextBox();
-            this.mod_btn_login = new System.Windows.Forms.Button();
-            this.mod_btn_main = new System.Windows.Forms.Button();
             this.mod_tabc.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // mod_tabc
             // 
             this.mod_tabc.Controls.Add(this.tabPage1);
             this.mod_tabc.Controls.Add(this.tabPage2);
-            this.mod_tabc.Location = new System.Drawing.Point(3, -1);
+            this.mod_tabc.Location = new System.Drawing.Point(3, 23);
             this.mod_tabc.Name = "mod_tabc";
             this.mod_tabc.SelectedIndex = 0;
-            this.mod_tabc.Size = new System.Drawing.Size(793, 451);
+            this.mod_tabc.Size = new System.Drawing.Size(793, 427);
             this.mod_tabc.TabIndex = 0;
             // 
             // tabPage1
@@ -85,10 +85,74 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(785, 422);
+            this.tabPage1.Size = new System.Drawing.Size(785, 398);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Kullanıcı Ekle";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.mod_btn_login);
+            this.panel1.Controls.Add(this.mod_txt_modPswd);
+            this.panel1.Controls.Add(this.mod_txt_modUsrN);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Location = new System.Drawing.Point(-4, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(802, 426);
+            this.panel1.TabIndex = 11;
+            // 
+            // mod_btn_main
+            // 
+            this.mod_btn_main.Location = new System.Drawing.Point(664, -6);
+            this.mod_btn_main.Name = "mod_btn_main";
+            this.mod_btn_main.Size = new System.Drawing.Size(141, 23);
+            this.mod_btn_main.TabIndex = 5;
+            this.mod_btn_main.Text = "Ana Menü";
+            this.mod_btn_main.UseVisualStyleBackColor = true;
+            this.mod_btn_main.Click += new System.EventHandler(this.mod_btn_main_Click);
+            // 
+            // mod_btn_login
+            // 
+            this.mod_btn_login.Location = new System.Drawing.Point(268, 224);
+            this.mod_btn_login.Name = "mod_btn_login";
+            this.mod_btn_login.Size = new System.Drawing.Size(181, 52);
+            this.mod_btn_login.TabIndex = 4;
+            this.mod_btn_login.Text = "Giriş Yap";
+            this.mod_btn_login.UseVisualStyleBackColor = true;
+            this.mod_btn_login.Click += new System.EventHandler(this.mod_btn_login_Click);
+            // 
+            // mod_txt_modPswd
+            // 
+            this.mod_txt_modPswd.Location = new System.Drawing.Point(268, 156);
+            this.mod_txt_modPswd.Name = "mod_txt_modPswd";
+            this.mod_txt_modPswd.Size = new System.Drawing.Size(181, 22);
+            this.mod_txt_modPswd.TabIndex = 3;
+            // 
+            // mod_txt_modUsrN
+            // 
+            this.mod_txt_modUsrN.Location = new System.Drawing.Point(271, 107);
+            this.mod_txt_modUsrN.Name = "mod_txt_modUsrN";
+            this.mod_txt_modUsrN.Size = new System.Drawing.Size(178, 22);
+            this.mod_txt_modUsrN.TabIndex = 2;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(210, 159);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(37, 16);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Şifre:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(165, 113);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(82, 16);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Kullanıcı Adı:";
             // 
             // label5
             // 
@@ -189,32 +253,32 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.mood_btn_usrSil);
-            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.mod_btn_usrSil);
+            this.tabPage2.Controls.Add(this.mod_txt_usrSil);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(785, 422);
+            this.tabPage2.Size = new System.Drawing.Size(785, 398);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Kullanıcı Sil";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // mood_btn_usrSil
+            // mod_btn_usrSil
             // 
-            this.mood_btn_usrSil.Location = new System.Drawing.Point(231, 211);
-            this.mood_btn_usrSil.Name = "mood_btn_usrSil";
-            this.mood_btn_usrSil.Size = new System.Drawing.Size(265, 72);
-            this.mood_btn_usrSil.TabIndex = 2;
-            this.mood_btn_usrSil.Text = "Kullanıcı Sil";
-            this.mood_btn_usrSil.UseVisualStyleBackColor = true;
+            this.mod_btn_usrSil.Location = new System.Drawing.Point(231, 211);
+            this.mod_btn_usrSil.Name = "mod_btn_usrSil";
+            this.mod_btn_usrSil.Size = new System.Drawing.Size(265, 72);
+            this.mod_btn_usrSil.TabIndex = 2;
+            this.mod_btn_usrSil.Text = "Kullanıcı Sil";
+            this.mod_btn_usrSil.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // mod_txt_usrSil
             // 
-            this.textBox4.Location = new System.Drawing.Point(287, 133);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(209, 22);
-            this.textBox4.TabIndex = 1;
+            this.mod_txt_usrSil.Location = new System.Drawing.Point(287, 133);
+            this.mod_txt_usrSil.Name = "mod_txt_usrSil";
+            this.mod_txt_usrSil.Size = new System.Drawing.Size(209, 22);
+            this.mod_txt_usrSil.TabIndex = 1;
             // 
             // label6
             // 
@@ -225,77 +289,15 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Kullanıcı Adı : ";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.mod_btn_main);
-            this.panel1.Controls.Add(this.mod_btn_login);
-            this.panel1.Controls.Add(this.mod_txt_modPswd);
-            this.panel1.Controls.Add(this.mod_txt_modUsrN);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Location = new System.Drawing.Point(-4, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(802, 426);
-            this.panel1.TabIndex = 11;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(165, 113);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 16);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Kullanıcı Adı:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(210, 159);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 16);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Şifre:";
-            // 
-            // mod_txt_modUsrN
-            // 
-            this.mod_txt_modUsrN.Location = new System.Drawing.Point(271, 107);
-            this.mod_txt_modUsrN.Name = "mod_txt_modUsrN";
-            this.mod_txt_modUsrN.Size = new System.Drawing.Size(178, 22);
-            this.mod_txt_modUsrN.TabIndex = 2;
-            // 
-            // mod_txt_modPswd
-            // 
-            this.mod_txt_modPswd.Location = new System.Drawing.Point(268, 156);
-            this.mod_txt_modPswd.Name = "mod_txt_modPswd";
-            this.mod_txt_modPswd.Size = new System.Drawing.Size(181, 22);
-            this.mod_txt_modPswd.TabIndex = 3;
-            // 
-            // mod_btn_login
-            // 
-            this.mod_btn_login.Location = new System.Drawing.Point(268, 224);
-            this.mod_btn_login.Name = "mod_btn_login";
-            this.mod_btn_login.Size = new System.Drawing.Size(181, 52);
-            this.mod_btn_login.TabIndex = 4;
-            this.mod_btn_login.Text = "Giriş Yap";
-            this.mod_btn_login.UseVisualStyleBackColor = true;
-            this.mod_btn_login.Click += new System.EventHandler(this.mod_btn_login_Click);
-            // 
-            // mod_btn_main
-            // 
-            this.mod_btn_main.Location = new System.Drawing.Point(642, 13);
-            this.mod_btn_main.Name = "mod_btn_main";
-            this.mod_btn_main.Size = new System.Drawing.Size(141, 23);
-            this.mod_btn_main.TabIndex = 5;
-            this.mod_btn_main.Text = "Ana Menü";
-            this.mod_btn_main.UseVisualStyleBackColor = true;
-            this.mod_btn_main.Click += new System.EventHandler(this.mod_btn_main_Click);
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.mod_btn_main);
             this.Controls.Add(this.mod_tabc);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
@@ -303,10 +305,10 @@
             this.mod_tabc.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -327,8 +329,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button mood_btn_usrSil;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button mod_btn_usrSil;
+        private System.Windows.Forms.TextBox mod_txt_usrSil;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button mod_btn_login;
