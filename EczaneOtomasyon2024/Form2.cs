@@ -64,6 +64,12 @@ namespace EczaneOtomasyon2024
                         kullaniciEkle.ExecuteNonQuery();
 
                         MessageBox.Show("Kullanıcı başarıyla eklendi.");
+                        mod_txt_pssw.Clear();
+                        mod_txt_usrnm.Clear();
+                        mod_txt_passwvalid.Clear();
+                        mod_cb_dr.Checked = false;
+                        mod_cb_ecz.Checked = false;
+                        this.kullanıcılarTableAdapter.Fill(this.eczaneOtomasyonuDBDataSet.Kullanıcılar);
                     }
                     catch (Exception ex)
                     {
@@ -90,6 +96,7 @@ namespace EczaneOtomasyon2024
             mod_tabc.Appearance = TabAppearance.FlatButtons;
             mod_tabc.ItemSize = new Size(0, 1);
             mod_tabc.SizeMode = TabSizeMode.Fixed;
+            this.kullanıcılarTableAdapter.Fill(this.eczaneOtomasyonuDBDataSet.Kullanıcılar);
         }
 
         private void mod_btn_login_Click(object sender, EventArgs e)
@@ -161,6 +168,27 @@ namespace EczaneOtomasyon2024
             this.Hide();
             Form1 form1 = new Form1();
             form1.Show();
+        }
+
+        private void mod_btn_usrSil_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                baglanti1.Open();
+                SqlCommand kullaniciSil = new SqlCommand("DELETE FROM Kullanıcılar WHERE KullanıcıAdı=@deger8", baglanti1);
+                kullaniciSil.Parameters.AddWithValue("@deger8", mod_txt_usrSil.Text);
+                kullaniciSil.ExecuteNonQuery();
+                MessageBox.Show("Kullanıcı başarıyla silindi.");
+                mod_txt_usrSil.Clear();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("HATA! : " + ex.Message);
+            }
+            finally
+            {
+                baglanti1.Close();
+            }
         }
     }
 }

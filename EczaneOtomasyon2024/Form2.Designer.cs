@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.mod_tabc = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.mod_btn_main = new System.Windows.Forms.Button();
             this.mod_btn_login = new System.Windows.Forms.Button();
             this.mod_txt_modPswd = new System.Windows.Forms.TextBox();
             this.mod_txt_modUsrN = new System.Windows.Forms.TextBox();
@@ -52,16 +52,31 @@
             this.mod_btn_usrSil = new System.Windows.Forms.Button();
             this.mod_txt_usrSil = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.mod_btn_main = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.eczaneOtomasyonuDBDataSet = new EczaneOtomasyon2024.EczaneOtomasyonuDBDataSet();
+            this.kullanıcılarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kullanıcılarTableAdapter = new EczaneOtomasyon2024.EczaneOtomasyonuDBDataSetTableAdapters.KullanıcılarTableAdapter();
+            this.kullanıcıIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kullanıcıAdıDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mod_tabc.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eczaneOtomasyonuDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kullanıcılarBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mod_tabc
             // 
             this.mod_tabc.Controls.Add(this.tabPage1);
             this.mod_tabc.Controls.Add(this.tabPage2);
+            this.mod_tabc.Controls.Add(this.tabPage3);
             this.mod_tabc.Location = new System.Drawing.Point(3, 23);
             this.mod_tabc.Name = "mod_tabc";
             this.mod_tabc.SelectedIndex = 0;
@@ -101,16 +116,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(802, 426);
             this.panel1.TabIndex = 11;
-            // 
-            // mod_btn_main
-            // 
-            this.mod_btn_main.Location = new System.Drawing.Point(664, -6);
-            this.mod_btn_main.Name = "mod_btn_main";
-            this.mod_btn_main.Size = new System.Drawing.Size(141, 23);
-            this.mod_btn_main.TabIndex = 5;
-            this.mod_btn_main.Text = "Ana Menü";
-            this.mod_btn_main.UseVisualStyleBackColor = true;
-            this.mod_btn_main.Click += new System.EventHandler(this.mod_btn_main_Click);
             // 
             // mod_btn_login
             // 
@@ -272,6 +277,7 @@
             this.mod_btn_usrSil.TabIndex = 2;
             this.mod_btn_usrSil.Text = "Kullanıcı Sil";
             this.mod_btn_usrSil.UseVisualStyleBackColor = true;
+            this.mod_btn_usrSil.Click += new System.EventHandler(this.mod_btn_usrSil_Click);
             // 
             // mod_txt_usrSil
             // 
@@ -288,6 +294,87 @@
             this.label6.Size = new System.Drawing.Size(88, 16);
             this.label6.TabIndex = 0;
             this.label6.Text = "Kullanıcı Adı : ";
+            // 
+            // mod_btn_main
+            // 
+            this.mod_btn_main.Location = new System.Drawing.Point(664, -6);
+            this.mod_btn_main.Name = "mod_btn_main";
+            this.mod_btn_main.Size = new System.Drawing.Size(141, 23);
+            this.mod_btn_main.TabIndex = 5;
+            this.mod_btn_main.Text = "Ana Menü";
+            this.mod_btn_main.UseVisualStyleBackColor = true;
+            this.mod_btn_main.Click += new System.EventHandler(this.mod_btn_main_Click);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.dataGridView1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(785, 398);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Kullanıcılar";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.kullanıcıIDDataGridViewTextBoxColumn,
+            this.kullanıcıAdıDataGridViewTextBoxColumn,
+            this.passwordDataGridViewTextBoxColumn,
+            this.rolDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.kullanıcılarBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(26, 36);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(741, 327);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // eczaneOtomasyonuDBDataSet
+            // 
+            this.eczaneOtomasyonuDBDataSet.DataSetName = "EczaneOtomasyonuDBDataSet";
+            this.eczaneOtomasyonuDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // kullanıcılarBindingSource
+            // 
+            this.kullanıcılarBindingSource.DataMember = "Kullanıcılar";
+            this.kullanıcılarBindingSource.DataSource = this.eczaneOtomasyonuDBDataSet;
+            // 
+            // kullanıcılarTableAdapter
+            // 
+            this.kullanıcılarTableAdapter.ClearBeforeFill = true;
+            // 
+            // kullanıcıIDDataGridViewTextBoxColumn
+            // 
+            this.kullanıcıIDDataGridViewTextBoxColumn.DataPropertyName = "KullanıcıID";
+            this.kullanıcıIDDataGridViewTextBoxColumn.HeaderText = "KullanıcıID";
+            this.kullanıcıIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.kullanıcıIDDataGridViewTextBoxColumn.Name = "kullanıcıIDDataGridViewTextBoxColumn";
+            this.kullanıcıIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kullanıcıAdıDataGridViewTextBoxColumn
+            // 
+            this.kullanıcıAdıDataGridViewTextBoxColumn.DataPropertyName = "KullanıcıAdı";
+            this.kullanıcıAdıDataGridViewTextBoxColumn.HeaderText = "KullanıcıAdı";
+            this.kullanıcıAdıDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.kullanıcıAdıDataGridViewTextBoxColumn.Name = "kullanıcıAdıDataGridViewTextBoxColumn";
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            // 
+            // rolDataGridViewTextBoxColumn
+            // 
+            this.rolDataGridViewTextBoxColumn.DataPropertyName = "Rol";
+            this.rolDataGridViewTextBoxColumn.HeaderText = "Rol";
+            this.rolDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.rolDataGridViewTextBoxColumn.Name = "rolDataGridViewTextBoxColumn";
             // 
             // Form2
             // 
@@ -309,6 +396,10 @@
             this.panel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eczaneOtomasyonuDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kullanıcılarBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -339,5 +430,14 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button mod_btn_main;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private EczaneOtomasyonuDBDataSet eczaneOtomasyonuDBDataSet;
+        private System.Windows.Forms.BindingSource kullanıcılarBindingSource;
+        private EczaneOtomasyonuDBDataSetTableAdapters.KullanıcılarTableAdapter kullanıcılarTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kullanıcıIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kullanıcıAdıDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rolDataGridViewTextBoxColumn;
     }
 }
