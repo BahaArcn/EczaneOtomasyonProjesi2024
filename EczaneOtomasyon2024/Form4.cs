@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,9 +24,29 @@ namespace EczaneOtomasyon2024
             try
             {
                 baglanti1.Open();
+                SqlCommand tarihKontrol = new SqlCommand("sp_ReceteTarihGetir", baglanti1);
+                tarihKontrol.CommandType = CommandType.StoredProcedure;
+                tarihKontrol.Parameters.AddWithValue("@ReceteID", Convert.ToInt16(ecz_txt_receteAra.Text));
+                SqlParameter dogrulamaParam8 = new SqlParameter()
+                {
+                    ParameterName = "@Tarih",
+                    SqlDbType = SqlDbType.Date,
+                    Direction = ParameterDirection.Output
+                };
+                tarihKontrol.Parameters.Add(dogrulamaParam8);
+                tarihKontrol.ExecuteNonQuery();
+                SqlDateTime kontrol8 = (DateTime)tarihKontrol.Parameters["@Tarih"].Value;
+                SqlCommand tarihGectiMi = new SqlCommand("SELECT dbo.TarihKontrol(@deger10)", baglanti1);
+                tarihGectiMi.Parameters.AddWithValue("deger10",kontrol8);
+                object result8 = tarihGectiMi.ExecuteScalar();
+                if (Convert.ToInt16(result8) == 1)
+                {
+                    MessageBox.Show("Reçete süresi geçmiş!");
+                    return;
+                }
                 SqlCommand ReceteSorgu3 = new SqlCommand("sp_ReceteBul", baglanti1);
                 ReceteSorgu3.CommandType = CommandType.StoredProcedure;
-                ReceteSorgu3.Parameters.AddWithValue("@alınanReceteID", ecz_txt_receteAra.Text);
+                ReceteSorgu3.Parameters.AddWithValue("@alınanReceteID",ecz_txt_receteAra.Text);
                 SqlParameter receteSahibiParam1 = new SqlParameter("@receteSahibi", SqlDbType.NVarChar, 50);
                 SqlParameter tcNoParam1 = new SqlParameter("@tcNo", SqlDbType.BigInt);
                 receteSahibiParam1.Direction = ParameterDirection.Output;
@@ -235,6 +256,7 @@ namespace EczaneOtomasyon2024
                 {
                     MessageBox.Show("Satış başarıyla tamamlandı.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+
 
             }
             catch (Exception ex)

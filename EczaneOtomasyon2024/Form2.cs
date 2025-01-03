@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Collections;
 
 namespace EczaneOtomasyon2024
 {
@@ -150,6 +151,10 @@ namespace EczaneOtomasyon2024
                 {
                     MessageBox.Show("Kullanıcı adı ve şifre boş bırakılamaz!");
                 }
+                SqlDataAdapter dataAdapter6 = new SqlDataAdapter("SELECT * FROM doktorlarınReceteleri",baglanti1);
+                DataTable dataTable6 = new DataTable();
+                dataAdapter6.Fill(dataTable6);
+                dataGridView2.DataSource = dataTable6;
             }
             catch (Exception ex)
             {

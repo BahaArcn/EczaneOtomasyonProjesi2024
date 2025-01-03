@@ -52,24 +52,28 @@
             this.mod_btn_usrSil = new System.Windows.Forms.Button();
             this.mod_txt_usrSil = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.mod_btn_main = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.eczaneOtomasyonuDBDataSet = new EczaneOtomasyon2024.EczaneOtomasyonuDBDataSet();
-            this.kullanıcılarBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kullanıcılarTableAdapter = new EczaneOtomasyon2024.EczaneOtomasyonuDBDataSetTableAdapters.KullanıcılarTableAdapter();
             this.kullanıcıIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kullanıcıAdıDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kullanıcılarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eczaneOtomasyonuDBDataSet = new EczaneOtomasyon2024.EczaneOtomasyonuDBDataSet();
+            this.mod_btn_main = new System.Windows.Forms.Button();
+            this.kullanıcılarTableAdapter = new EczaneOtomasyon2024.EczaneOtomasyonuDBDataSetTableAdapters.KullanıcılarTableAdapter();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.mod_tabc.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eczaneOtomasyonuDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kullanıcılarBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eczaneOtomasyonuDBDataSet)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // mod_tabc
@@ -77,6 +81,7 @@
             this.mod_tabc.Controls.Add(this.tabPage1);
             this.mod_tabc.Controls.Add(this.tabPage2);
             this.mod_tabc.Controls.Add(this.tabPage3);
+            this.mod_tabc.Controls.Add(this.tabPage4);
             this.mod_tabc.Location = new System.Drawing.Point(3, 23);
             this.mod_tabc.Name = "mod_tabc";
             this.mod_tabc.SelectedIndex = 0;
@@ -295,16 +300,6 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Kullanıcı Adı : ";
             // 
-            // mod_btn_main
-            // 
-            this.mod_btn_main.Location = new System.Drawing.Point(664, -6);
-            this.mod_btn_main.Name = "mod_btn_main";
-            this.mod_btn_main.Size = new System.Drawing.Size(141, 23);
-            this.mod_btn_main.TabIndex = 5;
-            this.mod_btn_main.Text = "Ana Menü";
-            this.mod_btn_main.UseVisualStyleBackColor = true;
-            this.mod_btn_main.Click += new System.EventHandler(this.mod_btn_main_Click);
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.dataGridView1);
@@ -332,20 +327,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(741, 327);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // eczaneOtomasyonuDBDataSet
-            // 
-            this.eczaneOtomasyonuDBDataSet.DataSetName = "EczaneOtomasyonuDBDataSet";
-            this.eczaneOtomasyonuDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // kullanıcılarBindingSource
-            // 
-            this.kullanıcılarBindingSource.DataMember = "Kullanıcılar";
-            this.kullanıcılarBindingSource.DataSource = this.eczaneOtomasyonuDBDataSet;
-            // 
-            // kullanıcılarTableAdapter
-            // 
-            this.kullanıcılarTableAdapter.ClearBeforeFill = true;
             // 
             // kullanıcıIDDataGridViewTextBoxColumn
             // 
@@ -376,6 +357,51 @@
             this.rolDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.rolDataGridViewTextBoxColumn.Name = "rolDataGridViewTextBoxColumn";
             // 
+            // kullanıcılarBindingSource
+            // 
+            this.kullanıcılarBindingSource.DataMember = "Kullanıcılar";
+            this.kullanıcılarBindingSource.DataSource = this.eczaneOtomasyonuDBDataSet;
+            // 
+            // eczaneOtomasyonuDBDataSet
+            // 
+            this.eczaneOtomasyonuDBDataSet.DataSetName = "EczaneOtomasyonuDBDataSet";
+            this.eczaneOtomasyonuDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // mod_btn_main
+            // 
+            this.mod_btn_main.Location = new System.Drawing.Point(664, -6);
+            this.mod_btn_main.Name = "mod_btn_main";
+            this.mod_btn_main.Size = new System.Drawing.Size(141, 23);
+            this.mod_btn_main.TabIndex = 5;
+            this.mod_btn_main.Text = "Ana Menü";
+            this.mod_btn_main.UseVisualStyleBackColor = true;
+            this.mod_btn_main.Click += new System.EventHandler(this.mod_btn_main_Click);
+            // 
+            // kullanıcılarTableAdapter
+            // 
+            this.kullanıcılarTableAdapter.ClearBeforeFill = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.dataGridView2);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(785, 398);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Reçeteler";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(25, 32);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(756, 358);
+            this.dataGridView2.TabIndex = 0;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -398,8 +424,10 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eczaneOtomasyonuDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kullanıcılarBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eczaneOtomasyonuDBDataSet)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -439,5 +467,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn kullanıcıAdıDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rolDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
