@@ -19,22 +19,27 @@ namespace EczaneOtomasyon2024
         Form2 Form2 = new Form2();
         Form3 Form3 = new Form3();
         Form4 Form4 = new Form4();
-        private void mod_btn_giris_Click(object sender, EventArgs e)
+        private void mod_btn_giris_Click(object sender, EventArgs e)  //Yönetici arayüzüne geçiş
         {
             Form2.Show();
             this.Hide();
         }
 
-        private void dr_btn_giris_Click(object sender, EventArgs e)
+        private void dr_btn_giris_Click(object sender, EventArgs e) //Doktor arayüzüne geçiş
         {
             Form3.Show();
             this.Hide();
         }
 
-        private void ecz_btn_giris_Click(object sender, EventArgs e)
+        private void ecz_btn_giris_Click(object sender, EventArgs e) //Eczacı arayüzüne geçiş
         {
             Form4.Show();
             this.Hide();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

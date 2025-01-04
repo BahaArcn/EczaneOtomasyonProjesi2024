@@ -17,12 +17,12 @@ namespace EczaneOtomasyon2024
     public partial class Form2 : Form
     {
        
-        SqlConnection baglanti1 = new SqlConnection("Data Source=DESKTOP-CKQJPFS;Initial Catalog=EczaneOtomasyonuDB;Integrated Security=True");
+        SqlConnection baglanti1 = new SqlConnection("Data Source=DESKTOP-CKQJPFS;Initial Catalog=EczaneOtomasyonuDB;Integrated Security=True"); //Veritabanı bağlantısı oluştur
         public Form2()
         {
             InitializeComponent();
         }
-        private void mod_btn_usrCrt_Click(object sender, EventArgs e)
+        private void mod_btn_usrCrt_Click(object sender, EventArgs e)  //Kullanıcı oluşturma
         {
 
             string yetki = ""; 
@@ -51,13 +51,13 @@ namespace EczaneOtomasyon2024
                     return;
                 }
 
-                if (mod_txt_pssw.Text == mod_txt_passwvalid.Text)
+                if (mod_txt_pssw.Text == mod_txt_passwvalid.Text) //Şifre kontrolü
                 {
 
                     try
                     {
                         baglanti1.Open();
-                        SqlCommand kullaniciEkle = new SqlCommand("sp_KullaniciEkle", baglanti1);
+                        SqlCommand kullaniciEkle = new SqlCommand("sp_KullaniciEkle", baglanti1); //Kullanıcı ekleyen stored procedureu çağır
                         kullaniciEkle.CommandType = CommandType.StoredProcedure;
                         kullaniciEkle.Parameters.AddWithValue("@KullaniciAdi", mod_txt_usrnm.Text);
                         kullaniciEkle.Parameters.AddWithValue("@Password", mod_txt_pssw.Text);
@@ -94,7 +94,7 @@ namespace EczaneOtomasyon2024
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            mod_tabc.Appearance = TabAppearance.FlatButtons;
+            mod_tabc.Appearance = TabAppearance.FlatButtons; // Giriş yapılana kadar sekmeleri gizle
             mod_tabc.ItemSize = new Size(0, 1);
             mod_tabc.SizeMode = TabSizeMode.Fixed;
             this.kullanıcılarTableAdapter.Fill(this.eczaneOtomasyonuDBDataSet.Kullanıcılar);
@@ -108,8 +108,7 @@ namespace EczaneOtomasyon2024
                 {
                     baglanti1.Open();
 
-                    // SqlCommand tanımla
-                    SqlCommand kullaniciKontrol = new SqlCommand("up_KullaniciKontrol1", baglanti1);
+                    SqlCommand kullaniciKontrol = new SqlCommand("up_KullaniciKontrol1", baglanti1); //Kullanıcı doğrulama stored procedure çağrısı
                     kullaniciKontrol.CommandType = CommandType.StoredProcedure;
 
                     // Parametreleri ekle
@@ -126,13 +125,11 @@ namespace EczaneOtomasyon2024
                     };
                     kullaniciKontrol.Parameters.Add(outputParam);
 
-                    // Stored Procedure'ü çalıştır
                     kullaniciKontrol.ExecuteNonQuery();
 
-                    // OUTPUT parametresini al
                     int sonuc = (int)kullaniciKontrol.Parameters["@is_valid"].Value;
 
-                    // Sonucu kontrol et
+
                     if (sonuc == 1)
                     {
                         MessageBox.Show("Kullanıcı doğrulandı!");
@@ -151,7 +148,7 @@ namespace EczaneOtomasyon2024
                 {
                     MessageBox.Show("Kullanıcı adı ve şifre boş bırakılamaz!");
                 }
-                SqlDataAdapter dataAdapter6 = new SqlDataAdapter("SELECT * FROM doktorlarınReceteleri",baglanti1);
+                SqlDataAdapter dataAdapter6 = new SqlDataAdapter("SELECT * FROM doktorlarınReceteleri",baglanti1); //Doktor reçetelerini gösteren viewi getir
                 DataTable dataTable6 = new DataTable();
                 dataAdapter6.Fill(dataTable6);
                 dataGridView2.DataSource = dataTable6;
@@ -167,7 +164,7 @@ namespace EczaneOtomasyon2024
 
         }
 
-        private void mod_btn_main_Click(object sender, EventArgs e)
+        private void mod_btn_main_Click(object sender, EventArgs e) //Ana menüye dön
         {
 
             this.Hide();
@@ -180,7 +177,7 @@ namespace EczaneOtomasyon2024
             try
             {
                 baglanti1.Open();
-                SqlCommand kullaniciSil = new SqlCommand("DELETE FROM Kullanıcılar WHERE KullanıcıAdı=@deger8", baglanti1);
+                SqlCommand kullaniciSil = new SqlCommand("DELETE FROM Kullanıcılar WHERE KullanıcıAdı=@deger8", baglanti1); //Kullanıcı silen stored procedure çağrısı
                 kullaniciSil.Parameters.AddWithValue("@deger8", mod_txt_usrSil.Text);
                 kullaniciSil.ExecuteNonQuery();
                 MessageBox.Show("Kullanıcı başarıyla silindi.");

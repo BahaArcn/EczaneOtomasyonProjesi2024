@@ -101,7 +101,6 @@
             this.DogumTarihi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ilçeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ilDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alerjiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.hastalarBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eczaneOtomasyonuDBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eczaneOtomasyonuDBDataSet)).BeginInit();
@@ -292,8 +291,7 @@
             this.sigortaDataGridViewTextBoxColumn,
             this.DogumTarihi,
             this.ilçeDataGridViewTextBoxColumn,
-            this.ilDataGridViewTextBoxColumn,
-            this.alerjiDataGridViewTextBoxColumn});
+            this.ilDataGridViewTextBoxColumn});
             this.dr_dgw_hastalar.DataSource = this.hastalarBindingSource;
             this.dr_dgw_hastalar.Location = new System.Drawing.Point(31, 137);
             this.dr_dgw_hastalar.Name = "dr_dgw_hastalar";
@@ -776,14 +774,6 @@
             this.ilDataGridViewTextBoxColumn.Name = "ilDataGridViewTextBoxColumn";
             this.ilDataGridViewTextBoxColumn.Width = 125;
             // 
-            // alerjiDataGridViewTextBoxColumn
-            // 
-            this.alerjiDataGridViewTextBoxColumn.DataPropertyName = "Alerji";
-            this.alerjiDataGridViewTextBoxColumn.HeaderText = "Alerji";
-            this.alerjiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.alerjiDataGridViewTextBoxColumn.Name = "alerjiDataGridViewTextBoxColumn";
-            this.alerjiDataGridViewTextBoxColumn.Width = 125;
-            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -898,6 +888,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DogumTarihi;
         private System.Windows.Forms.DataGridViewTextBoxColumn ilçeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ilDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn alerjiDataGridViewTextBoxColumn;
     }
 }
